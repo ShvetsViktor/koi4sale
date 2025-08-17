@@ -1,0 +1,27 @@
+@import "/src/style/base/variables.css";
+
+.app__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app__menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app__title {
+    color: var(--brand-text);
+}
+
+@media screen and (min-width: 769px) {
+    .app__header {
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .app_header {
+        font-size: 22px;
+    }
+}

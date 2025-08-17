@@ -1,0 +1,4 @@
+@import 'modern-normalize/modern-normalize.css';
+@import "/src/style/base/variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import "/src/style/base/basic.css";
