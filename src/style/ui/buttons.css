@@ -1,0 +1,42 @@
+.orange-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F36A43;
+    padding: 0 32px;
+    border: none;
+    border-radius: 26px;
+    height: 51px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 400;
+    width: fit-content;
+    max-width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.orange-btn:hover {
+    background: #CB3C18;
+}
+
+.transparent-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 3px solid white;
+    border-radius: 25px;
+    padding: 16px 32px;
+    width: fit-content;
+    height: 51px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+}
+
+.transparent-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

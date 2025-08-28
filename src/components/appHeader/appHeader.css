@@ -1,27 +1,51 @@
 @import "/src/style/base/variables.css";
 
+
 .app__header {
+    background-color: white;
+}
+
+.stripe {
+    width: 100%;
+    height: 16px;
+    display: grid;
+    grid-template-columns: 27.6% 72.4%;
+}
+
+.orange-stripe {
+    height: 100%;
+    background-color: #F36A43;
+}
+
+.red-stripe {
+    height: 100%;
+    background-color: #CB3C18;
+}
+
+.header__wrapper {
     display: flex;
+    height: 104px;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 143px 0 67px;
 }
 
-.app__menu {
+.header__left-part {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
 }
 
-.app__title {
-    color: var(--brand-text);
+.header__right-part {
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
-@media screen and (min-width: 769px) {
-    .app__header {
-        padding: 20px 10px;
-    }
+.header__title {
+    font-size: 40px;
 }
 
-@media screen and (min-width: 1201px) {
-    .app_header {
-        font-size: 22px;
-    }
+.header__title span {
+    color: #F03D28;
 }

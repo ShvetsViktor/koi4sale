@@ -44,7 +44,7 @@ table {
 
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -88,7 +88,6 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.container {
+.app {
     width: 100%;
-    padding: 0 24px;
 }

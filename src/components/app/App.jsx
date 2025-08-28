@@ -2,19 +2,19 @@ import { useState } from 'react'
 
 import AppHeader from "/src/components/appHeader/AppHeader.jsx"
 import AppFooter from "/src/components/appFooter/AppFooter.jsx"
+import HeroBanner from "/src/components/heroBanner/HeroBanner.jsx";
+import Carousel from "/src/components/carousel/Carousel.jsx";
 
 function App() {
   return (
     <div className='app'>
-      <AppHeader />
+      <header><AppHeader /></header>
       <main>
-        <>
-          First Component<br />
-          Second Component<br />
-          Third Component
-        </>
+        <HeroBanner />
+        <Carousel />
+        <section>section 3</section>
       </main>
-      <AppFooter />
+      <footer><AppFooter /></footer>
     </div>
   )
 }
