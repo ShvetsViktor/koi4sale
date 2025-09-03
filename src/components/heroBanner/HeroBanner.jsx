@@ -1,5 +1,3 @@
-import { InputText } from "primereact/inputtext";
-
 import "/src/components/heroBanner/heroBanner.css";
 
 const HeroBanner = () => {
@@ -16,7 +14,6 @@ const HeroBanner = () => {
             <a href="#" className="hero_banner__play-icon">
                 <img src="/src/assets/icons/play-icon.svg" alt="play-icon" />
             </a>
-            < InputText />
         </section>
     )
 }
