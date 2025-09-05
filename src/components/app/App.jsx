@@ -1,20 +1,19 @@
-import { useState } from 'react'
-
-import AppHeader from "/src/components/appHeader/AppHeader.jsx"
-import AppFooter from "/src/components/appFooter/AppFooter.jsx"
-import HeroBanner from "/src/components/heroBanner/HeroBanner.jsx";
-// import Carousel from "/src/components/carousel/Carousel.jsx";
+import Hero from "/src/components/hero/Hero.jsx";
+import Footer from "/src/components/footer/Footer.jsx";
+import About1 from "../about1/About1";
+import Contact from "../contact/Contact";
+import Testimonial from "../testimonial/Testimonial";
+import Video from "../testimonial copy/Video";
 
 function App() {
   return (
     <div className='app'>
-      <header><AppHeader /></header>
-      <main>
-        <HeroBanner />
-        {/* <Carousel /> */}
-        <section>section 3</section>
-      </main>
-      <footer><AppFooter /></footer>
+      <Hero />
+      <About1 />
+      {/* <Testimonial /> */}
+      {/* <Video /> */}
+      <Contact />
+      <Footer />
     </div>
   )
 }
