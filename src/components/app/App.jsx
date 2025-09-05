@@ -2,6 +2,7 @@ import Hero from "/src/components/hero/Hero.jsx";
 import Footer from "/src/components/footer/Footer.jsx";
 import About1 from "../about1/About1";
 import Contact from "../contact/Contact";
+import Carousel from "../carousel/Carousel";
 import Testimonial from "../testimonial/Testimonial";
 import Video from "../testimonial copy/Video";
 
@@ -10,6 +11,7 @@ function App() {
     <div className='app'>
       <Hero />
       <About1 />
+      <Carousel />
       {/* <Testimonial /> */}
       {/* <Video /> */}
       <Contact />
