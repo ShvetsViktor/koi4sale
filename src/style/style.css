@@ -6,3 +6,12 @@
 @theme {
   --color-primary: #fe5a08;
 }
+
+.swiper-pagination {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+}
