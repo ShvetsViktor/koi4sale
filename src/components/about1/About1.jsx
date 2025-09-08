@@ -1,4 +1,7 @@
 import React from "react";
+import about01 from "/src/assets/img/about-01.jpg";
+import about02 from "/src/assets/img/about-02.jpg";
+import about03 from "/src/assets/img/about-03.jpg";
 
 const About1 = () => {
     return (
@@ -11,15 +14,15 @@ const About1 = () => {
                                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                                     <div className="py-3 sm:py-4">
                                         <img
-                                            src="/src/assets/img/about-03.jpg"
-                                            alt=""
+                                            src={about01}
+                                            alt="koi"
                                             className="w-full rounded-2xl"
                                         />
                                     </div>
                                     <div className="py-3 sm:py-4">
                                         <img
-                                            src="/src/assets/img/about-02.jpg"
-                                            alt=""
+                                            src={about02}
+                                            alt="koi"
                                             className="w-full rounded-2xl"
                                         />
                                     </div>
@@ -27,8 +30,8 @@ const About1 = () => {
                                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                                     <div className="relative z-10 my-4">
                                         <img
-                                            src="/src/assets/img/about-01.jpg"
-                                            alt=""
+                                            src={about03}
+                                            alt="koi"
                                             className="w-full rounded-2xl"
                                         />
                                         <span className="absolute -right-7 -bottom-7 z-[-1]">

@@ -1,3 +1,5 @@
+import logo from "/src/assets/logo/koi-custom-logo-v2.svg";
+
 import '/src/components/footer/footer.css';
 
 
@@ -15,12 +17,12 @@ const AppFooter = () => {
                                 className="mb-6 inline-block max-w-[160px]"
                             >
                                 <img
-                                    src="/src/assets/logo/koi-custom-logo-v2.svg"
+                                    src={logo}
                                     alt="logo"
                                     className="max-w-full dark:hidden"
                                 />
                                 <img
-                                    src="https://cdn.tailgrids.com/assets/images/logo/logo-white.svg"
+                                    src={logo}
                                     alt="logo"
                                     className="hidden max-w-full dark:block"
                                 />

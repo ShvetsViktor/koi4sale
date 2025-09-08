@@ -1,20 +1,15 @@
-import Hero from "/src/components/hero/Hero.jsx";
-import Footer from "/src/components/footer/Footer.jsx";
-import About1 from "../about1/About1";
-import Contact from "../contact/Contact";
-import Carousel from "../carousel/Carousel";
-import Testimonial from "../testimonial/Testimonial";
-import Video from "../testimonial copy/Video";
+import Header from "/src/components/header/Header.jsx";
+import HomePage from "/src/pages/HomePage";
+import Footer from "/src/components/footer/Footer.jsx"
+
 
 function App() {
   return (
-    <div className='app'>
-      <Hero />
-      <About1 />
-      <Carousel />
-      {/* <Testimonial /> */}
-      {/* <Video /> */}
-      <Contact />
+    <div className="app">
+      <Header />
+      <main>
+        <HomePage />
+      </main>
       <Footer />
     </div>
   )
