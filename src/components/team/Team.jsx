@@ -48,6 +48,7 @@ const Team = () => {
     );
 };
 
+
 export default Team;
 
 const TeamCard = ({ imageSrc, name, profession }) => {
