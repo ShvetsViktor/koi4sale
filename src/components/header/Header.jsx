@@ -74,7 +74,7 @@ const Header = () => {
                                 href="/#"
                                 className="rounded-lg bg-primary px-7 py-3 text-base font-medium text-white hover:bg-orange-700"
                             >
-                                Contact Some of US
+                                Do not contact us
                             </a>
                         </div>
                     </div>
