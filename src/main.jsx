@@ -27,6 +27,9 @@ const router = createBrowserRouter([
       { path: "blog", element: <Blog /> },
     ],
   },
+  {
+    basename: import.meta.env.BASE_URL, // ← ключевая строчка!
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
