@@ -12,6 +12,7 @@ import AboutPage from '/src/pages/AboutPage';
 import ErrorPage from '/src/pages/ErrorPage';
 import ContactPage from './pages/ContactPage.jsx';
 import Blog from './pages/Blog.jsx';
+import PLP from './pages/PLP.jsx';
 
 import './style/style.css';
 
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "contact", element: <ContactPage /> },
       { path: "blog", element: <Blog /> },
+      { path: "shop", element: <PLP /> },
     ],
   },
 ],
