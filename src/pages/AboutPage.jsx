@@ -5,8 +5,8 @@ import Team from "/src/components/team/Team";
 const AboutPage = () => {
     return (
         <>
-            <Hero />
             <Team />
+            <Hero />
         </>
     )
 }

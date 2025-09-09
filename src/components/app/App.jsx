@@ -1,5 +1,6 @@
+import { Outlet } from "react-router-dom";
+
 import Header from "/src/components/header/Header.jsx";
-import HomePage from "/src/pages/HomePage";
 import Footer from "/src/components/footer/Footer.jsx"
 
 
@@ -8,7 +9,9 @@ function App() {
     <div className="app">
       <Header />
       <main>
-        <HomePage />
+        <div id="detail">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>

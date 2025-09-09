@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 import logo from "/src/assets/logo/koi-custom-logo-v2.svg";
 
@@ -27,23 +28,22 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`flex w-full items-center bg-white dark:bg-dark ${sticky && "sticky top-0 z-50"
-            }`}>
+        <header className={`relative z-50 flex w-full items-center bg-white dark:bg-dark ${sticky ? "sticky top-0" : ""}`}>
             <div className="container">
                 <div className="relative -mx-4 flex items-center justify-between">
                     <div className="w-60 max-w-full px-4">
-                        <a href="/#" className="block w-full py-5">
+                        <NavLink to="/" end className="block w-full py-5">
                             <img
                                 src={logo}
                                 alt="logo"
                                 className="w-full dark:hidden"
                             />
-                            <img
-                                src={logo}
-                                alt="logo"
-                                className="w-full hidden dark:block"
-                            />
-                        </a>
+                        </NavLink>
+                        <img
+                            src={logo}
+                            alt="logo"
+                            className="w-full hidden dark:block"
+                        />
                     </div>
                     <div className="flex w-full items-center justify-between px-4">
                         <div>
@@ -59,23 +59,24 @@ const Header = () => {
                             </button>
                             <nav
                                 id="navbarCollapse"
-                                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none lg:dark:bg-transparent ${!open && "hidden"
-                                    } `}
+                                className={`absolute right-4 top-full z-[60] w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2
+              lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none lg:dark:bg-transparent
+              ${!open && "hidden"}`}
                             >
                                 <ul className="block lg:flex">
-                                    <ListItem NavLink="/#">Shop</ListItem>
-                                    <ListItem NavLink="/#">About</ListItem>
-                                    <ListItem NavLink="/#">Blog</ListItem>
+                                    <ListItem to="/shop">Shop</ListItem>
+                                    <ListItem to="/about">About</ListItem>
+                                    <ListItem to="/blog">Blog</ListItem>
                                 </ul>
                             </nav>
                         </div>
                         <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-                            <a
-                                href="/#"
+                            <NavLink
+                                to="/contacts"
                                 className="rounded-lg bg-primary px-7 py-3 text-base font-medium text-white hover:bg-orange-700"
                             >
                                 Contact Us
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -86,16 +87,19 @@ const Header = () => {
 
 export default Header;
 
-const ListItem = ({ children, NavLink }) => {
+const ListItem = ({ children, to }) => {
     return (
         <>
             <li>
-                <a
-                    href={NavLink}
-                    className="flex py-2 text-base font-medium text-dark hover:text-primary dark:text-white lg:ml-10 lg:inline-flex"
+                <NavLink
+                    to={to}
+                    className={({ isActive, isPending }) =>
+                        `flex py-2 text-base font-medium text-dark hover:text-primary dark:text-white lg:ml-10 lg:inline-flex ` +
+                        (isActive ? "active" : isPending ? "pending" : "")
+                    }
                 >
                     {children}
-                </a>
+                </NavLink>
             </li>
         </>
     );

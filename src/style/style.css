@@ -3,6 +3,8 @@
 
 @import "tailgrids/tailwind.css";
 
+@import "./base/basic";
+
 @theme {
   --color-primary: #fe5a08;
 }
