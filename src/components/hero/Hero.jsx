@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import deliveryIcon from "/src/assets/icons/delivery-icon.svg";
-import hero from "/src/assets/img/hero.jpg";
 
-const Hero = () => {
+
+const Hero = ({ title, description, buttonText, buttonLink, img }) => {
     return (
         <>
             <div className="relative bg-white pb-[110px] pt-[120px] dark:bg-dark lg:pt-[150px]">
@@ -12,30 +13,30 @@ const Hero = () => {
                         <div className="w-full px-4 lg:w-5/12">
                             <div className="hero-content">
                                 <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-dark dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                                    Vibrant, Healthy Koi — Raised with Care at Home
+                                    {title}
                                 </h1>
                                 <p className="mb-8 max-w-[480px] text-base text-body-color dark:text-dark-6">
-                                    Discover healthy, vibrant koi fish raised with care in our own backyard pond. Perfect for ponds and water gardens, our home-bred koi are well-acclimated, easy to care for, and ready to bring beauty and tranquility to your space.
+                                    {description}
                                 </p>
                                 <ul className="flex flex-wrap items-center">
                                     <li>
-                                        <a
-                                            href="/#"
-                                            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-base font-medium text-white hover:bg-orange-700 lg:px-7"
+                                        <NavLink
+                                            to={buttonLink}
+                                            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-base font-medium !text-white hover:bg-orange-700 lg:px-7"
                                         >
-                                            Shop Koi
-                                        </a>
+                                            {buttonText}
+                                        </NavLink>
                                     </li>
                                     <li>
-                                        <a
-                                            href="/#"
+                                        <NavLink
+                                            to="/delivery"
                                             className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-primary dark:text-white"
                                         >
                                             <span className="mr-2">
                                                 <img src={deliveryIcon} alt="delivery-icon" />
                                             </span>
                                             Shipping Info
-                                        </a>
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -45,8 +46,8 @@ const Hero = () => {
                             <div className="lg:ml-auto lg:text-right">
                                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                                     <img
-                                        src={hero}
-                                        alt="hero"
+                                        src={img}
+                                        alt="hero-image"
                                         className="max-w-full lg:ml-auto"
                                     />
                                     <span className="absolute -bottom-8 -left-8 z-[-1]">

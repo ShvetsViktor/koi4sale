@@ -72,8 +72,8 @@ const Header = () => {
                         </div>
                         <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
                             <NavLink
-                                to="/contacts"
-                                className="rounded-lg bg-primary px-7 py-3 text-base font-medium text-white hover:bg-orange-700"
+                                to="/contact"
+                                className="rounded-lg bg-primary px-7 py-3 text-base font-medium hover:bg-orange-700 !text-white"
                             >
                                 Contact Us
                             </NavLink>
@@ -81,7 +81,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </header>
+        </header >
     );
 };
 

@@ -1,5 +1,9 @@
 import React from "react";
 
+import staff1 from "/src/assets/img/staff1.jpg";
+import staff2 from "/src/assets/img/staff2.jpg";
+import staff3 from "/src/assets/img/staff3.jpg";
+
 const Team = () => {
     return (
         <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
@@ -23,24 +27,19 @@ const Team = () => {
 
                 <div className="-mx-4 flex flex-wrap justify-center">
                     <TeamCard
-                        name="Coriss Ambady"
-                        profession="Web Developer"
-                        imagesrc="https://cdn.tailgrids.com/assets/images/core-components/teams/image-02.jpg"
+                        name="John Wayne"
+                        profession="Owner & Head Breeder"
+                        imageSrc={staff1}
+                    />
+                    <TeamCard
+                        name="Chris Ellis"
+                        profession="Sales & Customer Care Manager"
+                        imageSrc={staff2}
                     />
                     <TeamCard
                         name="Coriss Ambady"
-                        profession="Web Developer"
-                        imagesrc="https://cdn.tailgrids.com/assets/images/core-components/teams/image-01.jpg"
-                    />
-                    <TeamCard
-                        name="Coriss Ambady"
-                        profession="Web Developer"
-                        imagesrc="https://cdn.tailgrids.com/assets/images/marketing/team/team-01/image-04.jpg"
-                    />
-                    <TeamCard
-                        name="Coriss Ambady"
-                        profession="Web Developer"
-                        imagesrc="https://cdn.tailgrids.com/assets/images/core-components/teams/image-02.jpg"
+                        profession="Packing & Shipping Specialist"
+                        imageSrc={staff3}
                     />
                 </div>
             </div>
