@@ -7,7 +7,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/koi4sale/',
+  base: '/',
   resolve: {
     alias: {
       tailgrids: path.resolve(__dirname, 'node_modules/tailgrids/src'),
