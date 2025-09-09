@@ -1,7 +1,7 @@
 import Hero from "/src/components/hero/Hero";
 import Team from "/src/components/team/Team";
 
-import heroImage from "/src/assets/img/hero-about.jpg";
+import heroImage from "../assets/img/hero-about.jpg";
 
 
 const AboutPage = () => {

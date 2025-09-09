@@ -1,8 +1,8 @@
 import React from "react";
 
-import staff1 from "/src/assets/img/staff1.jpg";
-import staff2 from "/src/assets/img/staff2.jpg";
-import staff3 from "/src/assets/img/staff3.jpg";
+import staff1 from "../../assets/img/staff1.jpg";
+import staff2 from "../../assets/img/staff2.jpg";
+import staff3 from "../../assets/img/staff3.jpg";
 
 const Team = () => {
     return (

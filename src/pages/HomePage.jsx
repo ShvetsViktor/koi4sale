@@ -3,7 +3,7 @@ import About1 from "/src/components/about1/About1";
 import Contact from "/src/components/contact/Contact";
 import Carousel from "/src/components/carousel/Carousel";
 
-import heroImage from "/src/assets/img/hero-home.jpg";
+import heroImage from "../assets/img/hero-home.jpg";
 
 function HomePage() {
     return (
