@@ -1,5 +1,5 @@
 import products from '../../data/products.js';
-
+import { Link } from 'react-router-dom';
 
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
@@ -18,9 +18,9 @@ export default function ProductOverview({ productId }) {
                         {product.breadcrumbs.map((breadcrumb) => (
                             <li key={breadcrumb.id}>
                                 <div className="flex items-center">
-                                    <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
+                                    <Link to={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
                                         {breadcrumb.name}
-                                    </a>
+                                    </Link>
                                     <svg
                                         fill="currentColor"
                                         width={16}
