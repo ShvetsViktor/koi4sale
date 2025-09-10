@@ -13,6 +13,8 @@ import ErrorPage from '/src/pages/ErrorPage';
 import ContactPage from './pages/ContactPage.jsx';
 import Blog from './pages/Blog.jsx';
 import PLP from './pages/PLP.jsx';
+import PDP from './pages/PDP.jsx';
+import Delivery from './pages/Delivery.jsx';
 
 import './style/style.css';
 
@@ -27,11 +29,13 @@ const router = createBrowserRouter([
       { path: "contact", element: <ContactPage /> },
       { path: "blog", element: <Blog /> },
       { path: "shop", element: <PLP /> },
+      { path: "shop/:id", element: <PDP /> },
+      { path: "delivery", element: <Delivery /> },
     ],
   },
 ],
   {
-    basename: import.meta.env.BASE_URL, // ← ключевая строчка!
+    basename: import.meta.env.BASE_URL,
   }
 );
 

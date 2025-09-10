@@ -14,6 +14,7 @@ function HomePage() {
                 buttonText="Shop Koi"
                 buttonLink="/PLP"
                 img={heroImage}
+                isShipping="true"
             />
             <About1 />
             <Carousel />

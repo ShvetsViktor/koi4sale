@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import deliveryIcon from "/src/assets/icons/delivery-icon.svg";
 
 
-const Hero = ({ title, description, buttonText, buttonLink, img }) => {
+const Hero = ({ title, description, buttonText, buttonLink, img, isShipping }) => {
     return (
         <>
             <div className="relative bg-white pb-[110px] pt-[120px] dark:bg-dark lg:pt-[150px]">
@@ -32,10 +32,14 @@ const Hero = ({ title, description, buttonText, buttonLink, img }) => {
                                             to="/delivery"
                                             className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-primary dark:text-white"
                                         >
-                                            <span className="mr-2">
-                                                <img src={deliveryIcon} alt="delivery-icon" />
-                                            </span>
-                                            Shipping Info
+                                            {isShipping && (
+                                                <>
+                                                    <span className="mr-2">
+                                                        <img src={deliveryIcon} alt="delivery-icon" />
+                                                    </span>
+                                                    Shipping Info
+                                                </>
+                                            )}
                                         </NavLink>
                                     </li>
                                 </ul>

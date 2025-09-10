@@ -5,10 +5,8 @@ import ProductList from "../components/productList/ProductList";
 const PLP = () => {
     return (
         <>
-            <div className="PLP__wrapper">
-                <Breadcrumb />
-                <ProductList />
-            </div>
+            <Breadcrumb />
+            <ProductList />
         </>
     )
 }

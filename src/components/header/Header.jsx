@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom"; // NEW
 
 import logo from "/src/assets/logo/koi-custom-logo-v2.svg";
@@ -6,7 +6,20 @@ import logo from "/src/assets/logo/koi-custom-logo-v2.svg";
 const Header = () => {
     const [open, setOpen] = useState(false);
     const [sticky, setSticky] = useState(false);
+    const navRef = useRef(null);
+
     const location = useLocation(); // NEW
+
+    useEffect(() => {
+        if (!open) return;
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [open]);
 
     const handleNavbarToggle = () => setOpen((v) => !v);
 
@@ -60,6 +73,7 @@ const Header = () => {
                             </button>
 
                             <nav
+                                ref={navRef}
                                 id="navbarCollapse"
                                 className={`absolute right-4 top-full z-[60] w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2
                 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none lg:dark:bg-transparent
