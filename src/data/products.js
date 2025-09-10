@@ -13,10 +13,10 @@ const products = [
         id: 1,
         name: 'Earthen Bottle',
         price: '$48',
-        href: '/shop/1',
+        href: '/PLP/1',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi1, alt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.' },
@@ -49,10 +49,10 @@ const products = [
         id: 2,
         name: 'Nomad Tumbler',
         price: '$35',
-        href: '/shop/2',
+        href: '/PLP/2',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi2, alt: 'Olive drab green insulated bottle with flared screw lid and flat top.' },
@@ -81,10 +81,10 @@ const products = [
         id: 3,
         name: 'Focus Paper Refill',
         price: '$89',
-        href: '/shop/3',
+        href: '/PLP/3',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi3, alt: 'Person using a pen to cross a task off a productivity paper card.' },
@@ -102,10 +102,10 @@ const products = [
         id: 4,
         name: 'Machined Mechanical Pencil',
         price: '$35',
-        href: '/shop/4',
+        href: '/PLP/4',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi4, alt: 'Hand holding black machined steel mechanical pencil with brass tip and top.' },
@@ -129,10 +129,10 @@ const products = [
         id: 5,
         name: 'Focus Card Tray',
         price: '$64',
-        href: '/shop/5',
+        href: '/PLP/5',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi5, alt: 'Paper card sitting upright in walnut card holder on desk.' },
@@ -155,10 +155,10 @@ const products = [
         id: 6,
         name: 'Focus Multi-Pack',
         price: '$39',
-        href: '/shop/6',
+        href: '/PLP/6',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi6, alt: 'Stack of 3 small drab green cardboard paper card refill boxes with white text.' },
@@ -182,10 +182,10 @@ const products = [
         id: 7,
         name: 'Brass Scissors',
         price: '$50',
-        href: '/shop/7',
+        href: '/PLP/7',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi7, alt: 'Brass scissors with geometric design, black steel finger holes, and included upright brass stand.' },
@@ -209,10 +209,10 @@ const products = [
         id: 8,
         name: 'Focus Carry Pouch',
         price: '$32',
-        href: '/shop/8',
+        href: '/PLP/8',
         breadcrumbs: [
             { id: 1, name: 'Home', href: '/' },
-            { id: 2, name: 'Shop', href: '/shop' },
+            { id: 2, name: 'Shop', href: '/PLP' },
         ],
         images: [
             { src: koi8, alt: 'Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop.' },

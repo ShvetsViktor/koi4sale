@@ -80,7 +80,7 @@ const Header = () => {
                 ${!open && "hidden"}`}
                             >
                                 <ul className="block lg:flex">
-                                    <ListItem to="/shop" onNavigate={closeMenu}>Shop</ListItem>   {/* NEW */}
+                                    <ListItem to="/PLP" onNavigate={closeMenu}>Shop</ListItem>   {/* NEW */}
                                     <ListItem to="/about" onNavigate={closeMenu}>About</ListItem> {/* NEW */}
                                     <ListItem to="/blog" onNavigate={closeMenu}>Blog</ListItem>   {/* NEW */}
                                 </ul>
