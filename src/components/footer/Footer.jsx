@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import logo from "/src/assets/logo/koi-custom-logo-v2.svg";
 
 import '/src/components/footer/footer.css';
@@ -139,12 +141,11 @@ const AppFooter = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        href="javascript:void(0)"
+                                    <NavLink
+                                        to="/privacy"
                                         className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
                                     >
-                                        Setting & Privacy
-                                    </a>
+                                        Privacy Policy                                    </NavLink>
                                 </li>
                             </ul>
                         </div>

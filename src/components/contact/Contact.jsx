@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 const Contact = () => {
+    const [status, setStatus] = useState(null);
+    const [message, setMessage] = useState("");
+    const [t0, setT0] = useState(Date.now());
+    useEffect(() => { setT0(Date.now()); }, []);
     return (
         <>
             <section className="relative z-10 overflow-hidden bg-white py-20 dark:bg-dark lg:py-[120px]">
@@ -112,7 +118,58 @@ const Contact = () => {
                         </div>
                         <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
                             <div className="relative rounded-lg bg-white p-8 shadow-lg dark:bg-dark-2 sm:p-12">
-                                <form>
+                                <form
+                                    onSubmit={async (e) => {
+                                        e.preventDefault();
+                                        const data = new FormData(e.target);
+                                        const payload = Object.fromEntries(data.entries());
+                                        // Honeypot check
+                                        if (payload.company) {
+                                            setStatus("error");
+                                            setMessage("Spam detected.");
+                                            return;
+                                        }
+                                        // Consent required
+                                        if (!payload.consent) {
+                                            setStatus("error");
+                                            setMessage("Please agree to the Privacy Policy.");
+                                            return;
+                                        }
+                                        // Minimum time on page (anti-bot)
+                                        const started = Number(payload.t0 || 0);
+                                        const elapsed = Date.now() - started;
+                                        if (!Number.isFinite(started) || elapsed < 5500) {
+                                            setStatus("error");
+                                            setMessage("Please wait a moment before submitting and try again.");
+                                            return;
+                                        }
+                                        // Existing validation logic (not shown in original, but would go here)
+                                        payload._elapsedMs = elapsed;
+                                        // ... fetch(CONTACT_ENDPOINT, ...) logic would go here
+                                        fetch("http://localhost:8080/", {
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type": "application/json",
+                                            },
+                                            body: JSON.stringify(payload),
+                                        })
+                                            .then((res) => res.json())
+                                            .then((data) => {
+                                                setStatus("success");
+                                                setMessage("Message sent!");
+                                            })
+                                            .catch((error) => {
+                                                setStatus("error");
+                                                setMessage("Something went wrong. Please try again later.");
+                                            });
+                                    }}
+                                >
+                                    {/* Honeypot + render timestamp for anti-spam */}
+                                    <div className="fixed -left-[9999px] -top-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+                                        <label htmlFor="company">Company</label>
+                                        <input id="company" type="text" name="company" autoComplete="off" />
+                                    </div>
+                                    <input type="hidden" name="t0" value={t0} />
                                     <ContactInputBox
                                         type="text"
                                         name="name"
@@ -134,6 +191,12 @@ const Contact = () => {
                                         name="details"
                                         defaultValue=""
                                     />
+                                    <div className="mb-4 flex items-start gap-3">
+                                        <input id="consent" name="consent" type="checkbox" className="mt-1 h-4 w-4 rounded border-neutral-300" />
+                                        <label htmlFor="consent" className="text-sm text-body-color dark:text-dark-6">
+                                            I agree to the <Link to="/privacy" className="text-primary underline hover:no-underline">Privacy Policy</Link> and consent to be contacted about my enquiry.
+                                        </label>
+                                    </div>
                                     <div>
                                         <button
                                             type="submit"
@@ -141,6 +204,11 @@ const Contact = () => {
                                         >
                                             Send Message
                                         </button>
+                                        {message && (
+                                            <div className={status === "error" ? "text-red-500 pt-[10px]" : "text-green-600"}>
+                                                {message}
+                                            </div>
+                                        )}
                                     </div>
                                 </form>
                                 <div>

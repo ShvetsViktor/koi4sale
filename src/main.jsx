@@ -15,6 +15,7 @@ import Blog from './pages/Blog.jsx';
 import PLP from './pages/PLP.jsx';
 import PDP from './pages/PDP.jsx';
 import Delivery from './pages/Delivery.jsx';
+import Privacy from './pages/Privacy.jsx';
 
 import './style/style.css';
 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "PLP", element: <PLP /> },
       { path: "PLP/:id", element: <PDP /> },
       { path: "delivery", element: <Delivery /> },
+      { path: "privacy", element: <Privacy /> },
     ],
   },
 ],
