@@ -57,7 +57,7 @@ const Hero = ({ title, description, buttonText, buttonLink, img, isShipping }) =
                                         alt="hero-image"
                                         fill
                                         priority
-                                        className="max-w-full lg:ml-auto"
+                                        className="object-cover lg:ml-auto"
                                     />
                                     <span className="absolute -bottom-8 -left-8 z-[-1]">
                                         <svg

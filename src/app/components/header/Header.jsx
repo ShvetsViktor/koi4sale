@@ -2,9 +2,53 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 import logoLight from "./logo-light.svg";
 import logoDark from "./logo-dark.svg";
+
+
+
+function ThemeSwitcher() {
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
+    const isDark = theme === "dark";
+
+    return (
+        <label className="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
+            <input
+                type="checkbox"
+                checked={isDark}
+                onChange={() => setTheme(isDark ? "light" : "dark")}
+                className="sr-only"
+            />
+            <span className="label flex items-center text-sm font-medium text-black dark:text-white">
+                Light
+            </span>
+            <span
+                className={`slider mx-4 flex h-8 w-[60px] items-center rounded-full p-1 duration-200 ${isDark ? "bg-[#212b36]" : "bg-[#CCCCCE]"
+                    }`}
+            >
+                <span
+                    className={`dot h-6 w-6 rounded-full bg-white duration-200 ${isDark ? "translate-x-[28px]" : ""
+                        }`}
+                ></span>
+            </span>
+            <span className="label flex items-center text-sm font-medium text-black dark:text-white">
+                Dark
+            </span>
+        </label>
+    );
+}
 
 const ECommerceNavbar4 = () => {
     // State and refs for cart/wishlist dropdowns, lifted here for use in Navbar (mobile) and MiddleNavbar (desktop)
@@ -111,13 +155,14 @@ const MiddleNavbar = ({
                             cartBox={cartBox}
                             wishlistRef={wishlistRef}
                         >
-                            <ListItem NavLink="/#" menuName="Mens" />
-                            <ListItem NavLink="/#" menuName="Womans" />
-                            <ListItem NavLink="/#" menuName="Kids" />
-                            <ListItem NavLink="/#" menuName="Electronic Items" />
-                            <ListItem NavLink="/#" menuName="Kitchen Accessories" />
-                            <ListItem NavLink="/#" menuName="News & Blogs" />
-                            <ListItem NavLink="/#" menuName="Contact Us" />
+                            <ListItem NavLink="/plp" menuName="Shop" />
+                            <ListItem NavLink="/about" menuName="About" />
+                            <ListItem NavLink="/delivery" menuName="Delivery" />
+                            <ListItem NavLink="/returns" menuName="Returns" />
+                            <ListItem NavLink="/faq" menuName="FAQ" />
+                            <ListItem NavLink="/about" menuName="Our Team" />
+                            <ListItem NavLink="/terms" menuName="Terms of Service" />
+                            <ListItem NavLink="/privacy" menuName="Privacy Policy" />
                         </Navbar>
                     </div>
                     {/* Форма поиска — всегда видна */}
@@ -401,7 +446,14 @@ const Navbar = ({
                                             lg:static lg:flex lg:h-auto lg:w-full lg:justify-end lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none
                                             ${!open && "hidden"}`}
                             >
-                                <ul className="block items-center lg:flex">{children}</ul>
+                                <ul className="block items-center lg:flex">
+                                    {React.Children.map(children, (child, i) =>
+                                        React.cloneElement(child, { key: i, setOpen })
+                                    )}
+                                </ul>
+                                <div className="mt-6 sm:hidden">
+                                    <ThemeSwitcher />
+                                </div>
                                 {/* Mobile-only icons */}
                                 <div className="mt-6 flex flex-row justify-between px-4 sm:hidden">
                                     {/* wishlist */}
@@ -594,11 +646,12 @@ const Navbar = ({
     );
 };
 
-const ListItem = ({ NavLink, menuName }) => {
+const ListItem = ({ NavLink, menuName, setOpen }) => {
     return (
         <li>
             <Link
                 href={NavLink}
+                onClick={() => setOpen(false)}
                 className="flex justify-between py-2 text-base font-medium text-body-color hover:text-primary dark:text-dark-6 lg:mx-4 lg:inline-flex lg:py-6"
             >
                 {menuName}

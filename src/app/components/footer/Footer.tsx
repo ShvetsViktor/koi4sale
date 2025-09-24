@@ -75,7 +75,7 @@ const AppFooter = () => {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/FAQ"
+                                        href="/faq"
                                         className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
                                     >
                                         FAQ
@@ -91,7 +91,7 @@ const AppFooter = () => {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/terms-of-service"
+                                        href="/terms"
                                         className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
                                     >
                                         Terms of service

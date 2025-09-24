@@ -8,6 +8,10 @@
   --color-primary: #fe5a08;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .active {
   color: var(--color-primary);
 }
