@@ -3,7 +3,20 @@ import Image from "next/image";
 
 import deliveryIcon from "../../../../public/icons/delivery-icon.svg";
 
+/**
+ * @typedef {Object} HeroProps
+ * @property {string} title
+ * @property {string} description
+ * @property {string} buttonText
+ * @property {string} buttonLink
+ * @property {import("next/image").StaticImageData | string} img
+ * @property {boolean} [isShipping]
+ */
 
+
+/**
+ * @param {HeroProps} props
+ */
 const Hero = ({ title, description, buttonText, buttonLink, img, isShipping }) => {
     return (
         <>

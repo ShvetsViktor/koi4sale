@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // basePath: "/koi4sale",
+  output: "export", // важный флаг: включаем static export
+  basePath: "",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

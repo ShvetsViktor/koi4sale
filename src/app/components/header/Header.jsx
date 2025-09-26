@@ -6,6 +6,8 @@ import { useTheme } from "next-themes";
 
 import logoLight from "./logo-light.svg";
 import logoDark from "./logo-dark.svg";
+import BurgerButton from "../burgerButton/BurgerButton";
+
 
 
 
@@ -366,21 +368,13 @@ const MiddleNavbar = ({
                                 </div>
                             </div>
                         </div>
-
-                        {/* profile */}
                         <div>
-                            <button className="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border-[.5px] border-stroke bg-gray-2 text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white">
-                                <svg
-                                    width="22"
-                                    height="22"
-                                    viewBox="0 0 22 22"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="fill-current"
-                                >
-                                    <path d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z" />
-                                    <path d="M18.2531 21.4156C17.8406 21.4156 17.4625 21.0719 17.4625 20.625V19.6281C17.4625 16.0531 14.575 13.1656 11 13.1656C7.42499 13.1656 4.53749 16.0531 4.53749 19.6281V20.625C4.53749 21.0375 4.19374 21.4156 3.74686 21.4156C3.29999 21.4156 2.95624 21.0719 2.95624 20.625V19.6281C2.95624 15.1937 6.56561 11.6187 10.9656 11.6187C15.3656 11.6187 18.975 15.2281 18.975 19.6281V20.625C19.0094 21.0375 18.6656 21.4156 18.2531 21.4156Z" />
-                                </svg>
+                            <button
+                                className="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border border-stroke bg-gray-2 text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white"
+                            >
+                                <span className="block w-[20px] h-[2px] bg-current mb-[4px]"></span>
+                                <span className="block w-[20px] h-[2px] bg-current mb-[4px]"></span>
+                                <span className="block w-[20px] h-[2px] bg-current"></span>
                             </button>
                         </div>
                     </div>
@@ -422,6 +416,7 @@ const Navbar = ({
             return () => document.removeEventListener("click", clickHandler);
         }, [refs, isOpen, setIsOpen]);
     };
+
     useClickOutside([menuRef, menuTrigger], open, setOpen);
 
     return (
@@ -619,30 +614,14 @@ const Navbar = ({
                                             </div>
                                         )}
                                     </div>
-                                    {/* profile */}
-                                    <div>
-                                        <button className="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border-[.5px] border-stroke bg-gray-2 text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white">
-                                            {/* SVG profile */}
-                                            <svg
-                                                width="22"
-                                                height="22"
-                                                viewBox="0 0 22 22"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                className="fill-current"
-                                            >
-                                                <path d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z" />
-                                                <path d="M18.2531 21.4156C17.8406 21.4156 17.4625 21.0719 17.4625 20.625V19.6281C17.4625 16.0531 14.575 13.1656 11 13.1656C7.42499 13.1656 4.53749 16.0531 4.53749 19.6281V20.625C4.53749 21.0375 4.19374 21.4156 3.74686 21.4156C3.29999 21.4156 2.95624 21.0719 2.95624 20.625V19.6281C2.95624 15.1937 6.56561 11.6187 10.9656 11.6187C15.3656 11.6187 18.975 15.2281 18.975 19.6281V20.625C19.0094 21.0375 18.6656 21.4156 18.2531 21.4156Z" />
-                                            </svg>
-                                        </button>
-                                    </div>
+                                    {/* burger menu */}
                                 </div>
                             </nav>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </div >
+            </div >
+        </div >
     );
 };
 

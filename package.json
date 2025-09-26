@@ -4,11 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "@heroui/button": "^2.2.26",
+    "@heroui/react": "^2.8.4",
+    "@heroui/system": "^2.4.22",
+    "@heroui/theme": "^2.4.22",
+    "framer-motion": "^12.23.22",
     "next": "15.5.4",
     "next-themes": "^0.4.6",
     "postcss": "^8.5.6",
