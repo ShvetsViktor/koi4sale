@@ -12,7 +12,7 @@ function HomePage() {
         title="Vibrant, Healthy Koi — Raised with Care at Home"
         description="Discover healthy, vibrant koi fish raised with care in our own backyard pond. Perfect for ponds and water gardens, our home-bred koi are well-acclimated, easy to care for, and ready to bring beauty and tranquility to your space."
         buttonText="Shop Koi"
-        buttonLink="/PLP"
+        buttonLink="/plp"
         img={heroImage}
         isShipping={true}
       />

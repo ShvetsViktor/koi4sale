@@ -11,8 +11,11 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "@heroui/button": "^2.2.26",
-    "@heroui/react": "^2.8.4",
+    "@heroui/navbar": "^2.2.24",
+    "@heroui/ripple": "^2.2.19",
+    "@heroui/spinner": "^2.2.23",
     "@heroui/system": "^2.4.22",
     "@heroui/theme": "^2.4.22",
     "framer-motion": "^12.23.22",

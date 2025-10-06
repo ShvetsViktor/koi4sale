@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
                 title="Our Pond"
                 description="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
                 buttonText="Shop Koi"
-                buttonLink="/PLP"
+                buttonLink="/plp"
                 img="/img/hero/hero-about.jpg"
                 isShipping={true}
             />

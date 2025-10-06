@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import about01 from "../../../../public/img/about/about-01.jpg";
 import about02 from "../../../../public/img/about/about-02.jpg";
@@ -704,12 +705,12 @@ const About1 = () => {
                                 <p className="mb-8 text-base text-body-color dark:text-dark-6">
                                     Our koi are adapted to real garden ponds and thrive in a home environment. We focus on quality, careful breeding, and personal service—offering well-adjusted fish, reliable delivery, and honest advice from true enthusiasts.
                                 </p>
-                                <a
-                                    href="javascript:void(0)"
+                                <Link
+                                    href="/about"
                                     className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-primary hover:bg-orange-700"
                                 >
                                     About us
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

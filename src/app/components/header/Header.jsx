@@ -1,56 +1,7 @@
-'use client'
+"use client"
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-
-import logoLight from "./logo-light.svg";
-import logoDark from "./logo-dark.svg";
-import BurgerButton from "../burgerButton/BurgerButton";
-
-
-
-
-function ThemeSwitcher() {
-    const { theme, setTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) {
-        return null;
-    }
-
-    const isDark = theme === "dark";
-
-    return (
-        <label className="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
-            <input
-                type="checkbox"
-                checked={isDark}
-                onChange={() => setTheme(isDark ? "light" : "dark")}
-                className="sr-only"
-            />
-            <span className="label flex items-center text-sm font-medium text-black dark:text-white">
-                Light
-            </span>
-            <span
-                className={`slider mx-4 flex h-8 w-[60px] items-center rounded-full p-1 duration-200 ${isDark ? "bg-[#212b36]" : "bg-[#CCCCCE]"
-                    }`}
-            >
-                <span
-                    className={`dot h-6 w-6 rounded-full bg-white duration-200 ${isDark ? "translate-x-[28px]" : ""
-                        }`}
-                ></span>
-            </span>
-            <span className="label flex items-center text-sm font-medium text-black dark:text-white">
-                Dark
-            </span>
-        </label>
-    );
-}
 
 const ECommerceNavbar4 = () => {
     // State and refs for cart/wishlist dropdowns, lifted here for use in Navbar (mobile) and MiddleNavbar (desktop)
@@ -136,7 +87,6 @@ const MiddleNavbar = ({
     useClickOutside([wishlistRef, wishlistTrigger], isWishlist, setIsWishlist);
 
     return (
-
         <div className="w-full border-b border-stroke dark:border-dark-3 lg:py-4">
             <div className="container mx-auto">
                 <div className="relative py-2 -mx-4 flex flex-col sm:flex-row items-center sm:justify-between gap-4">
@@ -144,8 +94,8 @@ const MiddleNavbar = ({
                     {/* Logo and Navbar (burger) inline */}
                     <div className="w-full sm:w-auto flex items-center justify-between sm:justify-start">
                         <Link href="/" className="block w-40 pl-6">
-                            <img src={logoLight.src} alt="logo" className="w-full dark:hidden" />
-                            <img src={logoDark.src} alt="dark logo" className="w-40 hidden dark:block" />
+                            <img src="/img/header/logo-light.svg" alt="logo" className="w-full dark:hidden" />
+                            <img src="/img/header/logo-dark.svg" alt="dark logo" className="w-40 hidden dark:block" />
                         </Link>
                         <Navbar
                             isCartOpen={isCartOpen}
@@ -157,14 +107,13 @@ const MiddleNavbar = ({
                             cartBox={cartBox}
                             wishlistRef={wishlistRef}
                         >
-                            <ListItem NavLink="/plp" menuName="Shop" />
-                            <ListItem NavLink="/about" menuName="About" />
-                            <ListItem NavLink="/delivery" menuName="Delivery" />
-                            <ListItem NavLink="/returns" menuName="Returns" />
-                            <ListItem NavLink="/faq" menuName="FAQ" />
-                            <ListItem NavLink="/about" menuName="Our Team" />
-                            <ListItem NavLink="/terms" menuName="Terms of Service" />
-                            <ListItem NavLink="/privacy" menuName="Privacy Policy" />
+                            <ListItem NavLink="/#" menuName="Mens" />
+                            <ListItem NavLink="/#" menuName="Womans" />
+                            <ListItem NavLink="/#" menuName="Kids" />
+                            <ListItem NavLink="/#" menuName="Electronic Items" />
+                            <ListItem NavLink="/#" menuName="Kitchen Accessories" />
+                            <ListItem NavLink="/#" menuName="News & Blogs" />
+                            <ListItem NavLink="/#" menuName="Contact Us" />
                         </Navbar>
                     </div>
                     {/* Форма поиска — всегда видна */}
@@ -368,13 +317,21 @@ const MiddleNavbar = ({
                                 </div>
                             </div>
                         </div>
+
+                        {/* profile */}
                         <div>
-                            <button
-                                className="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border border-stroke bg-gray-2 text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white"
-                            >
-                                <span className="block w-[20px] h-[2px] bg-current mb-[4px]"></span>
-                                <span className="block w-[20px] h-[2px] bg-current mb-[4px]"></span>
-                                <span className="block w-[20px] h-[2px] bg-current"></span>
+                            <button className="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border-[.5px] border-stroke bg-gray-2 text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white">
+                                <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="fill-current"
+                                >
+                                    <path d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z" />
+                                    <path d="M18.2531 21.4156C17.8406 21.4156 17.4625 21.0719 17.4625 20.625V19.6281C17.4625 16.0531 14.575 13.1656 11 13.1656C7.42499 13.1656 4.53749 16.0531 4.53749 19.6281V20.625C4.53749 21.0375 4.19374 21.4156 3.74686 21.4156C3.29999 21.4156 2.95624 21.0719 2.95624 20.625V19.6281C2.95624 15.1937 6.56561 11.6187 10.9656 11.6187C15.3656 11.6187 18.975 15.2281 18.975 19.6281V20.625C19.0094 21.0375 18.6656 21.4156 18.2531 21.4156Z" />
+                                </svg>
                             </button>
                         </div>
                     </div>
@@ -416,7 +373,6 @@ const Navbar = ({
             return () => document.removeEventListener("click", clickHandler);
         }, [refs, isOpen, setIsOpen]);
     };
-
     useClickOutside([menuRef, menuTrigger], open, setOpen);
 
     return (
@@ -428,12 +384,40 @@ const Navbar = ({
                             <button
                                 ref={menuTrigger}
                                 onClick={() => setOpen(!open)}
-                                className={` ${open && "navbarTogglerActive"
-                                    } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+                                aria-label={open ? "Close menu" : "Open menu"}
+                                className="relative flex items-center justify-center w-8 h-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary lg:hidden"
                             >
-                                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-dark-6"></span>
-                                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-dark-6"></span>
-                                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-dark-6"></span>
+                                <span
+                                    className="absolute left-0 w-full h-[2px] bg-body-color dark:bg-dark-6 rounded transition-all duration-300 ease-in-out"
+                                    style={{
+                                        top: open ? "50%" : "6px",
+                                        transform: open
+                                            ? "translateY(-50%) rotate(45deg)"
+                                            : "translateY(0) rotate(0deg)",
+                                        transformOrigin: "center",
+                                    }}
+                                ></span>
+
+                                <span
+                                    className="absolute left-0 w-full h-[2px] bg-body-color dark:bg-dark-6 rounded transition-all duration-300 ease-in-out"
+                                    style={{
+                                        top: "50%",
+                                        transform: "translateY(-50%)",
+                                        opacity: open ? 0 : 1,
+                                    }}
+                                ></span>
+
+                                <span
+                                    className="absolute left-0 w-full h-[2px] bg-body-color dark:bg-dark-6 rounded transition-all duration-300 ease-in-out"
+                                    style={{
+                                        top: open ? "50%" : "auto",
+                                        bottom: open ? "auto" : "6px",
+                                        transform: open
+                                            ? "translateY(-50%) rotate(-45deg)"
+                                            : "translateY(0) rotate(0deg)",
+                                        transformOrigin: "center",
+                                    }}
+                                ></span>
                             </button>
                             <nav
                                 ref={menuRef}
@@ -441,14 +425,7 @@ const Navbar = ({
                                             lg:static lg:flex lg:h-auto lg:w-full lg:justify-end lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none
                                             ${!open && "hidden"}`}
                             >
-                                <ul className="block items-center lg:flex">
-                                    {React.Children.map(children, (child, i) =>
-                                        React.cloneElement(child, { key: i, setOpen })
-                                    )}
-                                </ul>
-                                <div className="mt-6 sm:hidden">
-                                    <ThemeSwitcher />
-                                </div>
+                                <ul className="block items-center lg:flex">{children}</ul>
                                 {/* Mobile-only icons */}
                                 <div className="mt-6 flex flex-row justify-between px-4 sm:hidden">
                                     {/* wishlist */}
@@ -614,27 +591,42 @@ const Navbar = ({
                                             </div>
                                         )}
                                     </div>
-                                    {/* burger menu */}
+                                    {/* profile */}
+                                    <div>
+                                        <button className="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border-[.5px] border-stroke bg-gray-2 text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white">
+                                            {/* SVG profile */}
+                                            <svg
+                                                width="22"
+                                                height="22"
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="fill-current"
+                                            >
+                                                <path d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z" />
+                                                <path d="M18.2531 21.4156C17.8406 21.4156 17.4625 21.0719 17.4625 20.625V19.6281C17.4625 16.0531 14.575 13.1656 11 13.1656C7.42499 13.1656 4.53749 16.0531 4.53749 19.6281V20.625C4.53749 21.0375 4.19374 21.4156 3.74686 21.4156C3.29999 21.4156 2.95624 21.0719 2.95624 20.625V19.6281C2.95624 15.1937 6.56561 11.6187 10.9656 11.6187C15.3656 11.6187 18.975 15.2281 18.975 19.6281V20.625C19.0094 21.0375 18.6656 21.4156 18.2531 21.4156Z" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
                             </nav>
                         </div>
                     </div>
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     );
 };
 
-const ListItem = ({ NavLink, menuName, setOpen }) => {
+const ListItem = ({ NavLink, menuName }) => {
     return (
         <li>
-            <Link
+            <a
                 href={NavLink}
-                onClick={() => setOpen(false)}
                 className="flex justify-between py-2 text-base font-medium text-body-color hover:text-primary dark:text-dark-6 lg:mx-4 lg:inline-flex lg:py-6"
             >
                 {menuName}
-            </Link>
+            </a>
         </li>
     );
 };
@@ -647,12 +639,12 @@ const CartItem = ({ image, link, title, desc, price }) => {
                     <img src={image} alt="product image" className="w-full" />
                 </div>
                 <div>
-                    <Link
+                    <a
                         href={link}
                         className="text-sm font-medium text-dark hover:text-primary dark:text-white"
                     >
                         {title}
-                    </Link>
+                    </a>
                     <p className="truncate text-xs font-medium text-body-color dark:text-dark-6">
                         {desc}
                     </p>
