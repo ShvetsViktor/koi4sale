@@ -1,10 +1,8 @@
 // app/plp/[id]/page.tsx
 import ProductOverview from "../../components/productOverview/ProductOverview";
 
-// Разрешаем ТОЛЬКО заранее сгенерированные id
 export const dynamicParams = false;
 
-// Список страниц, которые будут сгенерированы при билде (output: "export")
 export async function generateStaticParams() {
     return [
         { params: { id: "1" } },
@@ -18,6 +16,12 @@ export async function generateStaticParams() {
     ];
 }
 
-export default function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+    params: {
+        id: string;
+    };
+}
+
+export default function Page({ params }: PageProps) {
     return <ProductOverview productId={params.id} />;
 }
