@@ -6,16 +6,15 @@ export const dynamicParams = false;
 
 // Список страниц, которые будут сгенерированы при билде (output: "export")
 export async function generateStaticParams() {
-    // Укажите все доступные ID из вашего каталога
     return [
-        { id: "1" },
-        { id: "2" },
-        { id: "3" },
-        { id: "4" },
-        { id: "5" },
-        { id: "6" },
-        { id: "7" },
-        { id: "8" },
+        { params: { id: "1" } },
+        { params: { id: "2" } },
+        { params: { id: "3" } },
+        { params: { id: "4" } },
+        { params: { id: "5" } },
+        { params: { id: "6" } },
+        { params: { id: "7" } },
+        { params: { id: "8" } },
     ];
 }
 
