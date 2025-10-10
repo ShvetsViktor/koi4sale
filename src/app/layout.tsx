@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 
-import Header from "./components/header/Header";
+import Header from "@/app/components/header/Header.server";
 import Footer from "./components/footer/Footer";
 import Providers from "./providers/provider";
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-dark`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Providers>

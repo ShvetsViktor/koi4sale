@@ -231,7 +231,7 @@ const Contact = () => {
                                                 defaultValue=""
                                             />
                                             <div className="mb-4 flex items-start gap-3">
-                                                <input id="consent" name="consent" type="checkbox" className="mt-1 h-4 w-4 rounded border-neutral-300" />
+                                                <input id="consent" name="consent" type="checkbox" className="hover:cursor-pointer mt-1 h-4 w-4 rounded border-neutral-300" />
                                                 <label htmlFor="consent" className="text-sm text-body-color dark:text-dark-6">
                                                     I agree to the <Link href="/privacy" className="text-primary underline hover:no-underline">Privacy Policy</Link> and consent to be contacted about my enquiry.
                                                 </label>
@@ -239,7 +239,7 @@ const Contact = () => {
                                             <div>
                                                 <button
                                                     type="submit"
-                                                    className="w-full rounded border border-primary bg-primary p-3 text-white transition hover:bg-opacity-90"
+                                                    className="hover:cursor-pointer w-full rounded border border-primary bg-primary p-3 text-white transition hover:bg-opacity-90"
                                                 >
                                                     Send Message
                                                 </button>
@@ -1175,7 +1175,7 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <div className="w-full mt-12">
+            <div className="w-full mt-12 dark:bg-dark">
                 <iframe
                     title="Koi4Sale Location"
                     className="container h-[350px] border-0 rounded-lg shadow-md"

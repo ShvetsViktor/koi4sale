@@ -62,6 +62,39 @@ const AppFooter = () => {
                     <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
                         <div className="mb-10 w-full">
                             <h4 className="mb-9 text-lg font-semibold text-dark dark:text-white">
+                                Shop
+                            </h4>
+                            <ul className="space-y-3">
+                                <li>
+                                    <Link
+                                        href="/plp"
+                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                                    >
+                                        Shop
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/delivery"
+                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                                    >
+                                        Delivery
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/returns"
+                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                                    >
+                                        Returns
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
+                        <div className="mb-10 w-full">
+                            <h4 className="mb-9 text-lg font-semibold text-dark dark:text-white">
                                 Help
                             </h4>
                             <ul className="space-y-3">
@@ -81,12 +114,29 @@ const AppFooter = () => {
                                         FAQ
                                     </Link>
                                 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
+                        <div className="mb-10 w-full">
+                            <h4 className="mb-9 text-lg font-semibold text-dark dark:text-white">
+                                Company
+                            </h4>
+                            <ul className="space-y-3">
                                 <li>
                                     <Link
-                                        href="/returns"
+                                        href="/about"
                                         className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
                                     >
-                                        Returns
+                                        Our Team
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/privacy"
+                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
+                                    >
+                                        Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
@@ -100,48 +150,7 @@ const AppFooter = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
-                        <div className="mb-10 w-full">
-                            <h4 className="mb-9 text-lg font-semibold text-dark dark:text-white">
-                                About
-                            </h4>
-                            <ul className="space-y-3">
-                                <li>
-                                    <Link
-                                        href="/privacy"
-                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
-                                    >
-                                        Privacy Policy
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
-                        <div className="mb-10 w-full">
-                            <h4 className="mb-9 text-lg font-semibold text-dark dark:text-white">
-                                Shopping
-                            </h4>
-                            <ul className="space-y-3">
-                                <li>
-                                    <Link
-                                        href="/about"
-                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
-                                    >
-                                        Our Team
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/delivery"
-                                        className="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6"
-                                    >
-                                        Delivery
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
                     <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
                         <div className="mb-10 w-full">
                             <h4 className="mb-9 text-lg font-semibold text-dark dark:text-white">

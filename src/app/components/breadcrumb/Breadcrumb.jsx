@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const Breadcrumb = () => {
     return (
-        <div className="py-10 bg-white dark:bg-dark">
+        <div className="pb-4 bg-white dark:bg-dark">
             <div className="container">
                 <div className="w-full">
-                    <div className="px-4 py-4 border rounded-lg border-light shadow-1 bg-tg-bg dark:bg-dark-2 dark:border-dark-3 dark:shadow-card sm:px-6 md:px-8 md:py-5">
+                    <div className="bg-tg-bg dark:bg-dark dark:border-dark-3 dark:shadow-card sm:px-6 md:px-8 md:py-5">
                         <ul className="flex items-center">
                             <li className="flex items-center">
                                 <Link

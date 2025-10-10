@@ -7,7 +7,7 @@ import heroImage from "../../public/img/hero/hero-home.jpg";
 
 function HomePage() {
   return (
-    <div className='homepage'>
+    <div className='homepage dark:bg-dark'>
       <Hero
         title="Vibrant, Healthy Koi — Raised with Care at Home"
         description="Discover healthy, vibrant koi fish raised with care in our own backyard pond. Perfect for ponds and water gardens, our home-bred koi are well-acclimated, easy to care for, and ready to bring beauty and tranquility to your space."
