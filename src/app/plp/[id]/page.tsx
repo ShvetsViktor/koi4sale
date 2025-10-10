@@ -3,25 +3,23 @@ import ProductOverview from "../../components/productOverview/ProductOverview";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
+// Возвращаем список ID (без обёртки { params: ... })
+export async function generateStaticParams(): Promise<Array<{ id: string }>> {
     return [
-        { params: { id: "1" } },
-        { params: { id: "2" } },
-        { params: { id: "3" } },
-        { params: { id: "4" } },
-        { params: { id: "5" } },
-        { params: { id: "6" } },
-        { params: { id: "7" } },
-        { params: { id: "8" } },
+        { id: "1" },
+        { id: "2" },
+        { id: "3" },
+        { id: "4" },
+        { id: "5" },
+        { id: "6" },
+        { id: "7" },
+        { id: "8" },
     ];
 }
 
-interface PageProps {
-    params: {
-        id: string;
-    };
-}
-
-export default function Page({ params }: PageProps) {
-    return <ProductOverview productId={params.id} />;
+export default async function Page(
+    props: PageProps<'/plp/[id]'>
+) {
+    const { id } = await props.params; // params — Promise -> ждём его
+    return <ProductOverview productId={id} />;
 }
